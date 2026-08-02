@@ -4,7 +4,7 @@
 
 A simple web-based Qur'an application with no login required, designed especially to be easy for elderly users. Just open the app, search for a surah, and start reading.
 
-🔗 **Live Demo:** https://heroic-kheer-23bf7d.netlify.app
+🔗 **Live Demo:** https://syifaudz-dzikri.netlify.app
 
 ---
 
