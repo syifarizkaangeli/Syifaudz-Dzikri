@@ -43,7 +43,57 @@
   }
   button{font-family:'Nunito',sans-serif; cursor:pointer;}
   input{font-family:'Lora',serif;}
-  #app{max-width:640px; margin:0 auto; min-height:100vh; background:var(--paper); box-shadow:0 0 40px rgba(6,60,46,0.08); position:relative; padding-bottom:40px;}
+  #app{
+    width:100%; max-width:1180px; margin:0 auto; min-height:100vh;
+    background:var(--paper); box-shadow:0 0 40px rgba(6,60,46,0.08);
+    position:relative; padding-bottom:40px;
+  }
+  #view{width:100%;}
+
+  /* ===== Responsive desktop layout ===== */
+  @media (min-width: 900px){
+    body{padding:24px 0;}
+    #app{border-radius:28px; overflow:hidden;}
+    header.top{padding:34px 48px 40px;}
+    .brand-arabic{font-size:40px;}
+    .brand-tagline{max-width:760px; font-size:14px;}
+    .search-wrap{max-width:920px; margin:0 auto; padding:28px 32px 10px;}
+    .section-label{max-width:920px; margin:0 auto; padding-left:0; padding-right:0;}
+    .surah-list{
+      max-width:920px; margin:0 auto; padding-left:0; padding-right:0;
+      display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px;
+    }
+    .surah-card{min-height:78px;}
+    .surah-arabic{font-size:26px;}
+    .home-quran-action{max-width:920px; margin:0 auto; padding:14px 0 2px;}
+    .surah-title-block{
+      max-width:920px; margin:0 auto; padding-left:0 !important; padding-right:0 !important;
+    }
+    .lang-select-wrap{max-width:920px; margin:0 auto; padding-left:0; padding-right:0;}
+    .ayat-list{max-width:920px; margin:0 auto; padding-left:0; padding-right:0;}
+    .ayat-card{padding:24px 28px;}
+    .ayat-arabic{font-size:32px; line-height:2.25;}
+    .ayat-latin,.ayat-trans{font-size:16px;}
+    .bismillah{font-size:34px;}
+    .mini-player{position:fixed; bottom:20px; left:50%; transform:translateX(-50%); width:min(920px,calc(100% - 48px)); border-radius:18px; box-shadow:0 10px 30px rgba(0,0,0,.22);}
+  }
+
+  @media (min-width: 1200px){
+    .surah-list{grid-template-columns:repeat(3,minmax(0,1fr)); max-width:1040px;}
+    .search-wrap,.section-label,.surah-title-block,.lang-select-wrap,.ayat-list{max-width:1040px;}
+    .home-quran-action{max-width:1040px;}
+  }
+
+  @media (max-width: 899px){
+    #app{max-width:680px;}
+  }
+
+  @media (max-width: 600px){
+    .surah-list{padding-left:12px; padding-right:12px;}
+    .ayat-list{padding-left:12px; padding-right:12px;}
+    .ayat-card{padding:15px;}
+    .ayat-arabic{font-size:25px; line-height:2.05;}
+  }
 
   /* ===== Header ===== */
   header.top{
@@ -170,6 +220,15 @@
   }
   .ayat-play.playing{ background:#c0392b; }
   .ayat-arabic{ font-family:'Amiri',serif; font-size:27px; line-height:2.1; color:var(--ink); text-align:right; direction:rtl; margin-bottom:12px;}
+  .arabic-word{
+    border:none; background:transparent; color:inherit; font:inherit; padding:5px 6px; margin:0 1px;
+    border-radius:9px; display:inline-block; cursor:pointer; transition:background .15s, transform .1s;
+    -webkit-tap-highlight-color:transparent; touch-action:manipulation;
+  }
+  .arabic-word:hover{ background:var(--emerald-100); }
+  .arabic-word:active{ transform:scale(.96); }
+  .arabic-word.playing{ background:var(--gold-soft); color:var(--emerald-900); }
+  .word-hint{ font-family:'Nunito',sans-serif; font-size:11.5px; color:var(--ink-soft); text-align:right; margin:-5px 0 10px; }
   .ayat-latin{ font-family:'Lora',serif; font-style:italic; font-size:15.5px; color:var(--emerald-700); line-height:1.6; margin-bottom:8px;}
   .ayat-trans{ font-family:'Nunito',sans-serif; font-size:15.5px; color:var(--ink); line-height:1.6;}
 
@@ -313,6 +372,11 @@
   let playIndex = -1;
   let isPlayingAll = false;
 
+  // Mode untuk memutar seluruh Al-Qur'an dari Home, surah 1 sampai 114.
+  let isPlayingAllQuran = false;
+  let quranSurahIndex = 0;
+  let quranAyahIndex = 0;
+
   const LANGS = [
     {code:'id.indonesian', label:'Bahasa Indonesia'},
     {code:'en.sahih', label:'English'},
@@ -353,6 +417,9 @@
         </div>
         <div class="mic-hint" id="micHint">Tekan mikrofon lalu ucapkan nama surah atau kata yang dicari.</div>
       </div>
+      <div class="home-quran-action">
+        <button class="play-all-btn" id="playAllQuranBtn">${iconPlay()} Putar Semua Surah</button>
+      </div>
       <div class="section-label">Daftar Surah</div>
       <div class="surah-list" id="surahListEl"></div>
       <div id="ayatSearchWrap"></div>
@@ -360,6 +427,7 @@
 
     if(!surahList.length){ surahList = SURAH_DATA; }
     renderSurahList(surahList);
+    document.getElementById('playAllQuranBtn').addEventListener('click', togglePlayAllQuran);
 
     document.getElementById('searchInput').addEventListener('input', (e)=>{
       const raw = e.target.value.trim();
@@ -527,6 +595,137 @@
     rec.onend = ()=>{ listening = false; micBtn.classList.remove('listening'); };
   }
 
+
+  function pad3(n){ return String(n).padStart(3,'0'); }
+
+  // Audio kata-per-kata berasal dari asset word-by-word Quran CDN.
+  // Format file: wbw/SSS_AAA_WWW.mp3
+  function wordAudioUrl(surahNum, ayahNum, wordIndex){
+    return `https://audio.qurancdn.com/wbw/${pad3(surahNum)}_${pad3(ayahNum)}_${pad3(wordIndex)}.mp3`;
+  }
+
+  function splitArabicWords(text){
+    return String(text || '').trim().split(/\s+/).filter(Boolean);
+  }
+
+  async function fetchSurahData(num){
+    if(cache[num] && cache[num].base) return cache[num];
+
+    const editions = "quran-uthmani,en.transliteration,id.indonesian,ar.alafasy";
+    const r = await fetch(`${API}/surah/${num}/editions/${editions}`);
+    if(!r.ok) throw new Error('Gagal memuat surah');
+    const d = await r.json();
+    const data = d.data;
+    const arabic = data.find(e=>e.edition.identifier==='quran-uthmani');
+    const latin = data.find(e=>e.edition.identifier==='en.transliteration');
+    const trans = data.find(e=>e.edition.identifier==='id.indonesian');
+    const audio = data.find(e=>e.edition.identifier==='ar.alafasy');
+
+    const ayahs = arabic.ayahs.map((a,i)=>({
+      number: a.numberInSurah,
+      arabic: a.text,
+      latin: latin ? latin.ayahs[i].text : '',
+      trans: trans ? trans.ayahs[i].text : '',
+      audio: audio ? audio.ayahs[i].audio : ''
+    }));
+
+    cache[num] = { base: true, ayahs: ayahs, transCode:'id.indonesian' };
+    return cache[num];
+  }
+
+  function wordButtonsForAyah(surahNum, ayah){
+    const words = splitArabicWords(ayah.arabic);
+    return words.map((word, i)=>`
+      <button class="arabic-word"
+              type="button"
+              title="Putar kata ini"
+              data-word-surah="${surahNum}"
+              data-word-ayah="${ayah.number}"
+              data-word-index="${i+1}">${word}</button>
+    `).join(' ');
+  }
+
+  function playSingleWord(surahNum, ayahNum, wordIndex){
+    isPlayingAll = false;
+    isPlayingAllQuran = false;
+    playQueue = []; playIndex = -1;
+
+    document.querySelectorAll('.ayat-play.playing').forEach(el=>el.classList.remove('playing'));
+    document.querySelectorAll('.ayat-card.active').forEach(el=>el.classList.remove('active'));
+    document.querySelectorAll('.arabic-word.playing').forEach(el=>el.classList.remove('playing'));
+
+    const word = document.querySelector(
+      `.arabic-word[data-word-surah="${surahNum}"][data-word-ayah="${ayahNum}"][data-word-index="${wordIndex}"]`
+    );
+    const card = document.querySelector(`.ayat-card[data-ayah="${ayahNum}"]`);
+    if(word) word.classList.add('playing');
+    if(card) card.classList.add('active');
+
+    setMiniPlayer(true, `Kata ${wordIndex} • Ayat ${ayahNum}`);
+    setMediaSession(surahLabel(surahNum), `Kata ${wordIndex} • Ayat ${ayahNum}`);
+
+    audioEl.src = wordAudioUrl(surahNum, ayahNum, wordIndex);
+    audioEl.play().catch(()=>{
+      if(word) word.classList.remove('playing');
+    });
+  }
+
+  async function togglePlayAllQuran(){
+    if(isPlayingAllQuran){
+      stopAll();
+      return;
+    }
+
+    stopAll();
+    isPlayingAllQuran = true;
+    quranSurahIndex = 0;
+    quranAyahIndex = 0;
+
+    const btn = document.getElementById('playAllQuranBtn');
+    if(btn){
+      btn.classList.add('playing');
+      btn.innerHTML = `${iconPause()} Hentikan Putar Semua Surah`;
+    }
+    await playNextQuranAyah();
+  }
+
+  async function playNextQuranAyah(){
+    if(!isPlayingAllQuran) return;
+
+    if(quranSurahIndex >= SURAH_DATA.length){
+      stopAll();
+      return;
+    }
+
+    const meta = SURAH_DATA[quranSurahIndex];
+    try{
+      const data = await fetchSurahData(meta.number);
+      if(!isPlayingAllQuran) return;
+
+      if(quranAyahIndex >= data.ayahs.length){
+        quranSurahIndex++;
+        quranAyahIndex = 0;
+        await playNextQuranAyah();
+        return;
+      }
+
+      const a = data.ayahs[quranAyahIndex];
+      document.querySelectorAll('.arabic-word.playing').forEach(el=>el.classList.remove('playing'));
+      document.querySelectorAll('.ayat-card.active').forEach(el=>el.classList.remove('active'));
+
+      const card = document.querySelector(`.ayat-card[data-ayah="${a.number}"]`);
+      if(card) card.classList.add('active');
+
+      setMiniPlayer(true, `${meta.englishName} • Ayat ${a.number}`);
+      setMediaSession(meta.englishName, `Ayat ${a.number} dari ${data.ayahs.length}`);
+      audioEl.src = a.audio;
+      await audioEl.play();
+    }catch(e){
+      quranAyahIndex++;
+      playNextQuranAyah();
+    }
+  }
+
   function renderSurahDetail(num, scrollToAyah){
     stopAll();
     currentSurah = num;
@@ -559,28 +758,9 @@
   }
 
   function loadSurah(num, scrollToAyah){
-    if(cache[num] && cache[num].base){
-      buildAyatUI(num, scrollToAyah);
-      return;
-    }
-    const editions = "quran-uthmani,en.transliteration,id.indonesian,ar.alafasy";
-    fetch(`${API}/surah/${num}/editions/${editions}`).then(r=>r.json()).then(d=>{
-      const data = d.data; // array of 4 editions
-      const arabic = data.find(e=>e.edition.identifier==='quran-uthmani');
-      const latin = data.find(e=>e.edition.identifier==='en.transliteration');
-      const trans = data.find(e=>e.edition.identifier==='id.indonesian');
-      const audio = data.find(e=>e.edition.identifier==='ar.alafasy');
-      const ayahs = arabic.ayahs.map((a,i)=>({
-        number: a.numberInSurah,
-        arabic: a.text,
-        latin: latin ? latin.ayahs[i].text : '',
-        trans: trans ? trans.ayahs[i].text : '',
-        audio: audio ? audio.ayahs[i].audio : ''
-      }));
-      cache[num] = { base: true, ayahs: ayahs, transCode:'id.indonesian' };
-      buildAyatUI(num, scrollToAyah);
-    }).catch(()=>{
-      document.getElementById('ayatContainer').innerHTML = `<div class="empty-msg">Gagal memuat ayat. Periksa koneksi internet lalu coba lagi.</div>`;
+    fetchSurahData(num).then(()=>buildAyatUI(num, scrollToAyah)).catch(()=>{
+      const c = document.getElementById('ayatContainer');
+      if(c) c.innerHTML = `<div class="empty-msg">Gagal memuat ayat. Periksa koneksi internet lalu coba lagi.</div>`;
     });
   }
 
@@ -609,7 +789,8 @@
           <div class="ayat-badge">Ayat ${a.number}</div>
           <button class="ayat-play" data-ayah="${a.number}">${iconPlay()}</button>
         </div>
-        <div class="ayat-arabic">${a.arabic}</div>
+        <div class="ayat-arabic">${wordButtonsForAyah(num, a)}</div>
+        <div class="word-hint">Ketuk satu kata untuk mendengarkan kata itu saja.</div>
         <div class="ayat-latin">${esc(a.latin)}</div>
         <div class="ayat-trans">${esc(a.trans)}</div>
       </div>
@@ -619,6 +800,16 @@
       btn.addEventListener('click', ()=>{
         const n = parseInt(btn.dataset.ayah,10);
         playSingleAyah(num, n);
+      });
+    });
+
+    c.querySelectorAll('.arabic-word').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        playSingleWord(
+          parseInt(btn.dataset.wordSurah,10),
+          parseInt(btn.dataset.wordAyah,10),
+          parseInt(btn.dataset.wordIndex,10)
+        );
       });
     });
 
@@ -639,6 +830,7 @@
     audioEl.pause();
     audioEl.src = '';
     isPlayingAll = false;
+    isPlayingAllQuran = false;
     playQueue = []; playIndex = -1;
     miniPlayer.classList.remove('show');
     document.querySelectorAll('.ayat-card.active').forEach(el=>el.classList.remove('active'));
@@ -650,6 +842,8 @@
   function playSingleAyah(num, ayahNum){
     if(!cache[num]) return;
     isPlayingAll = false;
+    isPlayingAllQuran = false;
+    isPlayingAllQuran = false;
     playQueue = []; playIndex = -1;
     const a = cache[num].ayahs.find(x=>x.number===ayahNum);
     if(!a || !a.audio) return;
@@ -707,6 +901,9 @@
     if(isPlayingAll){
       playIndex++;
       playQueueStep();
+    } else if(isPlayingAllQuran){
+      quranAyahIndex++;
+      playNextQuranAyah();
     } else {
       stopAll();
     }
@@ -717,8 +914,13 @@
     miniPlayerText.textContent = text || '—';
   }
   miniPlayerBtn.addEventListener('click', ()=>{
-    if(audioEl.paused){ audioEl.play(); miniPlayerBtn.textContent='❚❚'; }
-    else { audioEl.pause(); miniPlayerBtn.textContent='►'; }
+    if(audioEl.paused){
+      audioEl.play().catch(()=>{});
+      miniPlayerBtn.textContent='❚❚';
+    } else {
+      audioEl.pause();
+      miniPlayerBtn.textContent='►';
+    }
   });
 
   function setMediaSession(title, subtitle){
