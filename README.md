@@ -15,7 +15,9 @@ A simple web-based Qur'an application with no login required, designed especiall
 - **Voice search (microphone)** — speak the name of a surah to search *(supported in Chrome/Android; not currently supported in Safari/iOS)*
 - Complete **114 surahs**, from Al-Fatihah to An-Nas
 - **Play the entire surah** from the first verse to the last
+- **Play all surahs** — start continuous playback from Al-Fatihah to An-Nas
 - **Play individual verses**
+- **Word-by-word Arabic audio** — tap any individual Arabic word to hear only that word
 - Displays **Arabic text**, **Latin transliteration**, and **translation**
 - **Multiple translation languages**:
   - Indonesian
@@ -28,9 +30,8 @@ A simple web-based Qur'an application with no login required, designed especiall
   - Spanish
 - **Background audio playback** with lock screen media controls
 - **Installable as a PWA** on Android and iOS home screens
+- **Responsive UI** — optimized for both mobile and desktop screens
 - **Large text and emerald-green theme**, designed to be senior-friendly
-
----
 
 ## 🛠️ Technologies
 
