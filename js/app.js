@@ -2,69 +2,8 @@
   "use strict";
 
   const API = "https://api.alquran.cloud/v1";
+  const FAV_KEY = "syifaudz_favorite_doa";
 
-  // Daftar 114 surah ditanam langsung di dalam app, supaya daftar surah
-  // tetap tampil walau koneksi internet lambat / belum siap saat app dibuka.
-  // Data ayat, audio, dan terjemah tetap diambil dari internet saat surah dibuka.
-  const SURAH_DATA = [
-    [1,"الفاتحة","Al-Fatihah","Pembukaan",7],[2,"البقرة","Al-Baqarah","Sapi Betina",286],
-    [3,"آل عمران","Ali 'Imran","Keluarga Imran",200],[4,"النساء","An-Nisa","Wanita",176],
-    [5,"المائدة","Al-Ma'idah","Hidangan",120],[6,"الأنعام","Al-An'am","Binatang Ternak",165],
-    [7,"الأعراف","Al-A'raf","Tempat Tertinggi",206],[8,"الأنفال","Al-Anfal","Harta Rampasan Perang",75],
-    [9,"التوبة","At-Taubah","Pengampunan",129],[10,"يونس","Yunus","Nabi Yunus",109],
-    [11,"هود","Hud","Nabi Hud",123],[12,"يوسف","Yusuf","Nabi Yusuf",111],
-    [13,"الرعد","Ar-Ra'd","Guruh",43],[14,"ابراهيم","Ibrahim","Nabi Ibrahim",52],
-    [15,"الحجر","Al-Hijr","Gunung Al Hijr",99],[16,"النحل","An-Nahl","Lebah",128],
-    [17,"الإسراء","Al-Isra","Perjalanan Malam",111],[18,"الكهف","Al-Kahf","Gua",110],
-    [19,"مريم","Maryam","Maryam",98],[20,"طه","Ta-Ha","Ta Ha",135],
-    [21,"الأنبياء","Al-Anbiya","Para Nabi",112],[22,"الحج","Al-Hajj","Haji",78],
-    [23,"المؤمنون","Al-Mu'minun","Orang-orang Mukmin",118],[24,"النور","An-Nur","Cahaya",64],
-    [25,"الفرقان","Al-Furqan","Pembeda",77],[26,"الشعراء","Asy-Syu'ara","Para Penyair",227],
-    [27,"النمل","An-Naml","Semut",93],[28,"القصص","Al-Qasas","Kisah-kisah",88],
-    [29,"العنكبوت","Al-'Ankabut","Laba-laba",69],[30,"الروم","Ar-Rum","Bangsa Romawi",60],
-    [31,"لقمان","Luqman","Luqman",34],[32,"السجدة","As-Sajdah","Sujud",30],
-    [33,"الأحزاب","Al-Ahzab","Golongan yang Bersekutu",73],[34,"سبإ","Saba","Kaum Saba",54],
-    [35,"فاطر","Fatir","Pencipta",45],[36,"يس","Ya-Sin","Ya Sin",83],
-    [37,"الصافات","As-Saffat","Yang Bersaf-saf",182],[38,"ص","Sad","Sad",88],
-    [39,"الزمر","Az-Zumar","Rombongan",75],[40,"غافر","Ghafir","Yang Mengampuni",85],
-    [41,"فصلت","Fussilat","Yang Dijelaskan",54],[42,"الشورى","Asy-Syura","Musyawarah",53],
-    [43,"الزخرف","Az-Zukhruf","Perhiasan",89],[44,"الدخان","Ad-Dukhan","Kabut",59],
-    [45,"الجاثية","Al-Jasiyah","Yang Berlutut",37],[46,"الأحقاف","Al-Ahqaf","Bukit-bukit Pasir",35],
-    [47,"محمد","Muhammad","Nabi Muhammad",38],[48,"الفتح","Al-Fath","Kemenangan",29],
-    [49,"الحجرات","Al-Hujurat","Kamar-kamar",18],[50,"ق","Qaf","Qaf",45],
-    [51,"الذاريات","Az-Zariyat","Angin yang Menerbangkan",60],[52,"الطور","At-Tur","Bukit Tursina",49],
-    [53,"النجم","An-Najm","Bintang",62],[54,"القمر","Al-Qamar","Bulan",55],
-    [55,"الرحمن","Ar-Rahman","Yang Maha Pengasih",78],[56,"الواقعة","Al-Waqi'ah","Hari Kiamat",96],
-    [57,"الحديد","Al-Hadid","Besi",29],[58,"المجادلة","Al-Mujadilah","Wanita yang Mengajukan Gugatan",22],
-    [59,"الحشر","Al-Hasyr","Pengusiran",24],[60,"الممتحنة","Al-Mumtahanah","Wanita yang Diuji",13],
-    [61,"الصف","As-Saff","Barisan",14],[62,"الجمعة","Al-Jumu'ah","Hari Jumat",11],
-    [63,"المنافقون","Al-Munafiqun","Orang-orang Munafik",11],[64,"التغابن","At-Tagabun","Hari Ditampakkan Kesalahan",18],
-    [65,"الطلاق","At-Talaq","Talak",12],[66,"التحريم","At-Tahrim","Mengharamkan",12],
-    [67,"الملك","Al-Mulk","Kerajaan",30],[68,"القلم","Al-Qalam","Pena",52],
-    [69,"الحاقة","Al-Haqqah","Hari Kiamat",52],[70,"المعارج","Al-Ma'arij","Tempat Naik",44],
-    [71,"نوح","Nuh","Nabi Nuh",28],[72,"الجن","Al-Jinn","Jin",28],
-    [73,"المزمل","Al-Muzzammil","Orang yang Berselimut",20],[74,"المدثر","Al-Muddassir","Orang yang Berkemul",56],
-    [75,"القيامة","Al-Qiyamah","Hari Kiamat",40],[76,"الانسان","Al-Insan","Manusia",31],
-    [77,"المرسلات","Al-Mursalat","Malaikat yang Diutus",50],[78,"النبإ","An-Naba","Berita Besar",40],
-    [79,"النازعات","An-Nazi'at","Malaikat yang Mencabut",46],[80,"عبس","'Abasa","Ia Bermuka Masam",42],
-    [81,"التكوير","At-Takwir","Menggulung",29],[82,"الإنفطار","Al-Infitar","Terbelah",19],
-    [83,"المطففين","Al-Mutaffifin","Orang-orang yang Curang",36],[84,"الإنشقاق","Al-Insyiqaq","Terbelah",25],
-    [85,"البروج","Al-Buruj","Gugusan Bintang",22],[86,"الطارق","At-Tariq","Yang Datang di Malam Hari",17],
-    [87,"الأعلى","Al-A'la","Yang Paling Tinggi",19],[88,"الغاشية","Al-Gasyiyah","Hari Pembalasan",26],
-    [89,"الفجر","Al-Fajr","Fajar",30],[90,"البلد","Al-Balad","Negeri",20],
-    [91,"الشمس","Asy-Syams","Matahari",15],[92,"الليل","Al-Lail","Malam",21],
-    [93,"الضحى","Ad-Duha","Waktu Duha",11],[94,"الشرح","Asy-Syarh","Kelapangan",8],
-    [95,"التين","At-Tin","Buah Tin",8],[96,"العلق","Al-'Alaq","Segumpal Darah",19],
-    [97,"القدر","Al-Qadr","Kemuliaan",5],[98,"البينة","Al-Bayyinah","Bukti Nyata",8],
-    [99,"الزلزلة","Az-Zalzalah","Kegoncangan",8],[100,"العاديات","Al-'Adiyat","Kuda Perang yang Berlari Kencang",11],
-    [101,"القارعة","Al-Qari'ah","Hari Kiamat",11],[102,"التكاثر","At-Takasur","Bermegah-megahan",8],
-    [103,"العصر","Al-'Asr","Masa",3],[104,"الهمزة","Al-Humazah","Pengumpat",9],
-    [105,"الفيل","Al-Fil","Gajah",5],[106,"قريش","Quraisy","Suku Quraisy",4],
-    [107,"الماعون","Al-Ma'un","Barang-barang yang Berguna",7],[108,"الكوثر","Al-Kausar","Nikmat yang Berlimpah",3],
-    [109,"الكافرون","Al-Kafirun","Orang-orang Kafir",6],[110,"النصر","An-Nasr","Pertolongan",3],
-    [111,"المسد","Al-Masad","Sabut",5],[112,"الإخلاص","Al-Ikhlas","Memurnikan Keesaan Allah",4],
-    [113,"الفلق","Al-Falaq","Waktu Subuh",5],[114,"الناس","An-Nas","Manusia",6]
-  ].map(x=>({ number:x[0], name:x[1], englishName:x[2], englishNameTranslation:x[3], numberOfAyahs:x[4] }));
   const view = document.getElementById('view');
   const headerExtra = document.getElementById('headerExtra');
   const backSlot = document.getElementById('backBtnSlot');
@@ -85,6 +24,10 @@
   let quranSurahIndex = 0;
   let quranAyahIndex = 0;
 
+  // Tab aktif di halaman Home: 'quran' atau 'doa'
+  let homeTab = 'quran';
+  let doaShowFavOnly = false;
+
   const LANGS = [
     {code:'id.indonesian', label:'Bahasa Indonesia'},
     {code:'en.sahih', label:'English'},
@@ -100,7 +43,7 @@
     const d = document.createElement('div'); d.textContent = s || ''; return d.innerHTML;
   }
 
-  function iconMic(active){
+  function iconMic(){
     return `<svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 15a3 3 0 003-3V6a3 3 0 10-6 0v6a3 3 0 003 3z" stroke="white" stroke-width="2"/><path d="M19 11a7 7 0 01-14 0M12 18v3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>`;
   }
   function iconSearch(){
@@ -108,6 +51,27 @@
   }
   function iconPlay(){ return `<svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>`; }
   function iconPause(){ return `<svg width="16" height="16" viewBox="0 0 24 24" fill="white"><rect x="6" y="5" width="4" height="14"/><rect x="14" y="5" width="4" height="14"/></svg>`; }
+  function iconHeart(filled){
+    return filled
+      ? `<svg width="18" height="18" viewBox="0 0 24 24" fill="#c0392b"><path d="M12 21s-7.5-4.6-10-9.3C.5 8 2.4 4.5 6 4.5c2 0 3.5 1.1 6 3.6 2.5-2.5 4-3.6 6-3.6 3.6 0 5.5 3.5 4 7.2C19.5 16.4 12 21 12 21z"/></svg>`
+      : `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8a9c92" stroke-width="2"><path d="M12 21s-7.5-4.6-10-9.3C.5 8 2.4 4.5 6 4.5c2 0 3.5 1.1 6 3.6 2.5-2.5 4-3.6 6-3.6 3.6 0 5.5 3.5 4 7.2C19.5 16.4 12 21 12 21z"/></svg>`;
+  }
+  function iconCopy(){
+    return `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 01-1-1V4a1 1 0 011-1h10a1 1 0 011 1v1"/></svg>`;
+  }
+
+  // ---------- FAVORIT DOA (disimpan di perangkat, localStorage) ----------
+  function getFavorites(){
+    try{ return JSON.parse(localStorage.getItem(FAV_KEY) || "[]"); }catch(e){ return []; }
+  }
+  function isFavorite(id){ return getFavorites().includes(id); }
+  function toggleFavorite(id){
+    const favs = getFavorites();
+    const i = favs.indexOf(id);
+    if(i === -1) favs.push(id); else favs.splice(i,1);
+    localStorage.setItem(FAV_KEY, JSON.stringify(favs));
+    return favs.includes(id);
+  }
 
   // ---------- ROUTER ----------
   function renderHome(){
@@ -117,6 +81,28 @@
     headerExtra.innerHTML = `<div class="brand-tagline">Menjadikan ayat-ayat Al-Qur'an sebagai obat untuk selalu mengingat Allah SWT akan kebesaran-Nya.</div>`;
 
     view.innerHTML = `
+      <div class="tab-bar">
+        <button class="tab-btn ${homeTab==='quran'?'active':''}" data-tab="quran">Al-Qur'an</button>
+        <button class="tab-btn ${homeTab==='doa'?'active':''}" data-tab="doa">Kumpulan Doa</button>
+      </div>
+      <div id="tabContent"></div>
+    `;
+
+    view.querySelectorAll('.tab-btn').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        homeTab = btn.dataset.tab;
+        renderHome();
+      });
+    });
+
+    if(homeTab === 'quran') renderQuranTab();
+    else renderDoaTab();
+  }
+
+  // ---------- TAB: AL-QUR'AN ----------
+  function renderQuranTab(){
+    const c = document.getElementById('tabContent');
+    c.innerHTML = `
       <div class="search-wrap">
         <div class="search-box">
           ${iconSearch()}
@@ -212,7 +198,8 @@
     fetch(`${API}/search/${encodeURIComponent(query)}/all/id.indonesian`)
       .then(r=>r.json())
       .then(d=>{
-        if(!wrap || document.getElementById('searchInput').value.trim() !== query) return;
+        const input = document.getElementById('searchInput');
+        if(!wrap || !input || input.value.trim() !== query) return;
         const matches = (d.data && d.data.matches) ? d.data.matches : [];
         if(!matches.length){
           wrap.innerHTML = `<div class="section-label">Hasil Pencarian Ayat</div><div class="empty-msg">Tidak ada ayat yang cocok dengan "${esc(query)}".</div>`;
@@ -283,8 +270,9 @@
     });
     rec.onresult = (event)=>{
       const text = event.results[0][0].transcript;
-      document.getElementById('searchInput').value = text;
-      document.getElementById('searchInput').dispatchEvent(new Event('input'));
+      const input = document.getElementById('searchInput');
+      input.value = text;
+      input.dispatchEvent(new Event('input'));
       micHint.textContent = `Hasil suara: "${text}"`;
     };
     rec.onerror = (event)=>{
@@ -302,7 +290,6 @@
     };
     rec.onend = ()=>{ listening = false; micBtn.classList.remove('listening'); };
   }
-
 
   function pad3(n){ return String(n).padStart(3,'0'); }
 
@@ -545,12 +532,13 @@
     document.querySelectorAll('.ayat-play.playing').forEach(el=>el.classList.remove('playing'));
     const pb = document.getElementById('playAllBtn');
     if(pb){ pb.classList.remove('playing'); pb.innerHTML = `${iconPlay()} Putar Seluruh Surah`; }
+    const pq = document.getElementById('playAllQuranBtn');
+    if(pq){ pq.classList.remove('playing'); pq.innerHTML = `${iconPlay()} Putar Semua Surah`; }
   }
 
   function playSingleAyah(num, ayahNum){
     if(!cache[num]) return;
     isPlayingAll = false;
-    isPlayingAllQuran = false;
     isPlayingAllQuran = false;
     playQueue = []; playIndex = -1;
     const a = cache[num].ayahs.find(x=>x.number===ayahNum);
@@ -643,6 +631,132 @@
         navigator.mediaSession.setActionHandler('pause', ()=>audioEl.pause());
       }catch(e){}
     }
+  }
+
+  // ---------- TAB: KUMPULAN DOA ----------
+  function renderDoaTab(){
+    stopAll();
+    const c = document.getElementById('tabContent');
+    c.innerHTML = `
+      <div class="search-wrap">
+        <div class="search-box">
+          ${iconSearch()}
+          <input id="doaSearchInput" type="text" placeholder="Cari doa, mis. 'hutang' atau 'kesedihan'..." />
+        </div>
+      </div>
+      <div class="doa-filter-row">
+        <button class="chip ${doaShowFavOnly?'':'active'}" data-fav="0">Semua Doa</button>
+        <button class="chip ${doaShowFavOnly?'active':''}" data-fav="1">${iconHeart(true)} Favorit</button>
+      </div>
+      <div id="doaListWrap"></div>
+    `;
+
+    c.querySelectorAll('.chip[data-fav]').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        doaShowFavOnly = btn.dataset.fav === '1';
+        renderDoaTab();
+      });
+    });
+
+    document.getElementById('doaSearchInput').addEventListener('input', (e)=>{
+      renderDoaList(e.target.value.trim().toLowerCase());
+    });
+
+    renderDoaList('');
+  }
+
+  function renderDoaList(query){
+    const wrap = document.getElementById('doaListWrap');
+    if(!wrap) return;
+
+    let items = DOA_DATA.slice();
+    if(doaShowFavOnly){
+      const favs = getFavorites();
+      items = items.filter(d => favs.includes(d.id));
+    }
+    if(query){
+      items = items.filter(d =>
+        d.title.toLowerCase().includes(query) ||
+        d.category.toLowerCase().includes(query) ||
+        d.translation.toLowerCase().includes(query)
+      );
+    }
+
+    if(!items.length){
+      wrap.innerHTML = `<div class="empty-msg">${doaShowFavOnly ? 'Belum ada doa favorit. Ketuk ikon hati pada doa untuk menyimpannya.' : 'Doa tidak ditemukan. Coba kata lain.'}</div>`;
+      return;
+    }
+
+    // Kelompokkan per kategori supaya lebih mudah dibaca
+    const groups = {};
+    items.forEach(d=>{
+      if(!groups[d.category]) groups[d.category] = [];
+      groups[d.category].push(d);
+    });
+
+    wrap.innerHTML = Object.keys(groups).map(cat => `
+      <div class="section-label">${esc(cat)}</div>
+      <div class="surah-list">
+        ${groups[cat].map(d => `
+          <button class="surah-card doa-card" data-id="${d.id}">
+            <div class="surah-info">
+              <div class="latin">${esc(d.title)}</div>
+              <div class="meta">${esc(d.translation.slice(0, 60))}${d.translation.length > 60 ? '…' : ''}</div>
+            </div>
+            <span class="fav-mark">${isFavorite(d.id) ? iconHeart(true) : ''}</span>
+          </button>
+        `).join('')}
+      </div>
+    `).join('');
+
+    wrap.querySelectorAll('.doa-card').forEach(btn=>{
+      btn.addEventListener('click', ()=> renderDoaDetail(btn.dataset.id));
+    });
+  }
+
+  function renderDoaDetail(id){
+    stopAll();
+    const doa = DOA_DATA.find(d=>d.id===id);
+    if(!doa){ renderHome(); return; }
+
+    backSlot.innerHTML = `<button class="back-btn" id="backBtn">← Kembali</button>`;
+    headerExtra.innerHTML = '';
+    document.getElementById('backBtn').addEventListener('click', renderHome);
+
+    view.innerHTML = `
+      <div class="doa-detail">
+        <div class="doa-detail-top">
+          <div>
+            <div class="doa-detail-cat">${esc(doa.category)}</div>
+            <div class="doa-detail-title">${esc(doa.title)}</div>
+          </div>
+          <button class="icon-btn fav-btn" id="favBtn" title="Simpan ke favorit">${iconHeart(isFavorite(doa.id))}</button>
+        </div>
+        <div class="doa-card-body">
+          <div class="doa-arabic">${esc(doa.arabic)}</div>
+          <div class="doa-latin">${esc(doa.latin)}</div>
+          <div class="doa-trans">${esc(doa.translation)}</div>
+        </div>
+        <button class="play-all-btn" id="copyDoaBtn">${iconCopy()} Salin Teks Doa</button>
+      </div>
+    `;
+
+    document.getElementById('favBtn').addEventListener('click', (e)=>{
+      const nowFav = toggleFavorite(doa.id);
+      e.currentTarget.innerHTML = iconHeart(nowFav);
+    });
+
+    document.getElementById('copyDoaBtn').addEventListener('click', async (e)=>{
+      const text = `${doa.title}\n\n${doa.arabic}\n\n${doa.latin}\n\n${doa.translation}`;
+      const btn = e.currentTarget;
+      try{
+        await navigator.clipboard.writeText(text);
+        btn.innerHTML = 'Tersalin ✓';
+      }catch(err){
+        btn.innerHTML = 'Gagal menyalin';
+      }
+      setTimeout(()=>{ btn.innerHTML = `${iconCopy()} Salin Teks Doa`; }, 1800);
+    });
   }
 
   // ---------- INIT ----------
