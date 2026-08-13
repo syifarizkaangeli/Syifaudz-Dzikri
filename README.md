@@ -70,4 +70,4 @@ This web app can also be packaged into an Android APK using **PWABuilder**.
 
 ## 💚 Credits
 
-Made with ❤️ by **Syifarizkaangeli**
+Made by **Syifarizkaangeli**
