@@ -2,44 +2,48 @@
 
 > *"Making the verses of the Holy Qur'an a remedy to always remember the greatness of Allah (SWT)."*
 
-**Syifaudz Dzikri** adalah aplikasi web Al-Qur'an dan kumpulan doa harian yang dibuat dengan tampilan sederhana, nyaman, dan mudah digunakan. Aplikasi ini dirancang agar pengguna dapat membaca Al-Qur'an, mendengarkan bacaan ayat, mencari ayat, serta membaca dan menyimpan doa favorit tanpa perlu membuat akun.
+**Syifaudz Dzikri** is a simple, modern, and user-friendly web-based Qur'an and daily prayer application. It is designed to make reading the Qur'an, listening to recitations, searching verses, and accessing daily prayers easier — without requiring an account or login.
 
 🔗 **Live Demo:** https://syifaudz-dzikri.netlify.app
 
 ---
 
-## ✨ Fitur Utama
+## ✨ Features
 
-### 📖 Al-Qur'an
+### 📖 Qur'an
 
-- **Tidak memerlukan login** — aplikasi dapat langsung digunakan.
-- Menampilkan **114 surah** dari Al-Fatihah sampai An-Nas.
-- Menampilkan:
-  - Nama surah
-  - Nomor surah
-  - Nama Arab
-  - Arti/nama terjemahan surah
-  - Jumlah ayat
-- Membaca **teks Arab Al-Qur'an**.
-- Menampilkan **transliterasi Latin**.
-- Menampilkan **terjemahan bahasa Indonesia**.
-- Tersedia pilihan berbagai bahasa terjemahan.
-- Dapat membuka surah tertentu secara langsung.
-- Tampilan ayat dibuat dalam bentuk kartu agar nyaman dibaca.
+- **No login required** — open the application and start using it immediately
+- Complete **114 Surahs**, from Al-Fatihah to An-Nas
+- Display Surah:
+  - Surah number
+  - Arabic name
+  - English name
+  - Translation of the Surah name
+  - Number of verses
+- Display **Arabic Qur'an text**
+- Display **Latin transliteration**
+- Display **translations**
+- Read verses in a clean card-based interface
+- Open a specific Surah directly
+- Jump directly to a specific verse
 
-### 🔎 Pencarian Al-Qur'an
+---
 
-Pencarian dapat dilakukan berdasarkan:
+## 🔎 Qur'an Search
 
-- Nama surah
-- Nomor surah
-- Kata dalam ayat
-- Nomor ayat
-- Format `nomor:ayat`
-- Format `nomor ayat`
-- Nama surah + nomor ayat
+The application provides a flexible Qur'an search system.
 
-Contoh:
+Users can search by:
+
+- Surah name
+- Surah number
+- Words contained in verses
+- Verse number
+- `surah:verse` format
+- `surah verse` format
+- Surah name + verse number
+
+### Example
 
 ```text
 Al-Baqarah 255
