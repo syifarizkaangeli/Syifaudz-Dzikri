@@ -5,6 +5,7 @@
 **Syifaudz Dzikri** is a simple, modern, and user-friendly web-based Qur'an and daily prayer application. It is designed to make reading the Qur'an, listening to recitations, searching for verses, and accessing daily prayers easier — without requiring an account or login.
 
 🔗 **Live Demo:** https://syifaudz-dzikri-quran.netlify.app
+**DOWNLOAD APK (click by install anw)** app-debug.apk
 
 ---
 
