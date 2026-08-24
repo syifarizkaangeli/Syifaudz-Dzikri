@@ -1,0 +1,242 @@
+[
+  {
+    "id": "doa-melunasi-hutang",
+    "category": "Rezeki & Hutang",
+    "title": "Doa Melunasi Hutang",
+    "arabic": "اللَّهُمَّ اكْفِنِي بِحَلَالِكَ عَنْ حَرَامِكَ وَأَغْنِنِي بِفَضْلِكَ عَمَّنْ سِوَاكَ",
+    "latin": "Allahummakfinii bihalaalika 'an haraamika wa aghninii bifadhlika 'amman siwaak.",
+    "translation": "Ya Allah, cukupkanlah aku dengan yang halal dari yang haram, dan kayakanlah aku dengan karunia-Mu sehingga aku tidak membutuhkan selain-Mu."
+  },
+  {
+    "id": "sholawat-adrikni",
+    "category": "Shalawat",
+    "title": "Sholawat Adrikni",
+    "arabic": "اللَّهُمَّ صَلِّ عَلَى سَيِّدِنَا مُحَمَّدٍ قَدْ ضَاقَتْ حِيلَتِي أَدْرِكْنِي يَا اللَّهُ يَا رَسُولَ اللَّهِ",
+    "latin": "Allahumma shalli 'ala sayyidina Muhammadin qad dhaaqat hiilatii adriknii ya Allah ya Rasulallah.",
+    "translation": "Ya Allah, limpahkan shalawat kepada junjungan kami Nabi Muhammad SAW. Sungguh telah sempit upaya dan dayaku, maka tolonglah aku wahai Allah, wahai Rasulullah."
+  },
+  {
+    "id": "dzikir-nabi-yunus",
+    "category": "Dzikir",
+    "title": "Dzikir Nabi Yunus",
+    "arabic": "لَا إِلَهَ إِلَّا أَنْتَ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِينَ",
+    "latin": "Laa ilaaha illaa anta subhaanaka inni kuntu minazh-zhaalimiin.",
+    "translation": "Tidak ada Tuhan selain Engkau. Maha Suci Engkau. Sesungguhnya aku termasuk orang-orang yang zalim."
+  },
+  {
+    "id": "doa-wajah-nabi-yusuf",
+    "category": "Doa Kecantikan",
+    "title": "Doa Wajah Nabi Yusuf",
+    "arabic": "إِذْ قَالَ يُوسُفُ لِأَبِيهِ يَا أَبَتِ إِنِّي رَأَيْتُ أَحَدَ عَشَرَ كَوْكَبًا وَالشَّمْسَ وَالْقَمَرَ رَأَيْتُهُمْ لِي سَاجِدِينَ",
+    "latin": "Idz qaala yuusufu li abiihi yaa abati innii ra'aitu ahada 'asyara kaukabaw wasy syamsa wal qamara ra'aituhum lii saajidiin.",
+    "translation": "Ketika Yusuf berkata kepada ayahnya: Wahai ayahku, sesungguhnya aku bermimpi melihat sebelas bintang, matahari dan bulan; kulihat semuanya sujud kepadaku."
+  },
+  {
+    "id": "terhindar-lilitan-hutang",
+    "category": "Perlindungan",
+    "title": "Terhindar dari Lilitan Hutang",
+    "arabic": "وَأَعُوذُ بِكَ مِنْ غَلَبَةِ الدَّيْنِ وَقَهْرِ الرِّجَالِ",
+    "latin": "Wa a'udzu bika min ghalabatid daini wa qahrir rijaal.",
+    "translation": "Dan aku berlindung kepada-Mu dari lilitan hutang dan tekanan manusia."
+  },
+  {
+    "id": "terhindar-takut-kikir",
+    "category": "Perlindungan",
+    "title": "Terhindar dari Ketakutan dan Kekikiran",
+    "arabic": "وَأَعُوذُ بِكَ مِنَ الْجُبْنِ وَالْبُخْلِ",
+    "latin": "Wa a'udzu bika minal jubni wal bukhli.",
+    "translation": "Dan aku berlindung kepada-Mu dari sifat pengecut dan kikir."
+  },
+  {
+    "id": "terhindar-kesedihan",
+    "category": "Perlindungan",
+    "title": "Terhindar dari Kesedihan",
+    "arabic": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْهَمِّ وَالْحَزَنِ",
+    "latin": "Allahumma inni a'udzu bika minal hammi wal hazani.",
+    "translation": "Ya Allah, aku berlindung kepada-Mu dari kesedihan dan kegundahan."
+  },
+  {
+    "id": "terhindar-kemalasan",
+    "category": "Perlindungan",
+    "title": "Terhindar dari Kemalasan",
+    "arabic": "وَأَعُوذُ بِكَ مِنَ الْعَجْزِ وَالْكَسَلِ",
+    "latin": "Wa a'udzu bika minal 'ajzi wal kasali.",
+    "translation": "Dan aku berlindung kepada-Mu dari kelemahan dan kemalasan."
+  },
+  {
+    "id": "doa-nabi-musa",
+    "category": "Rezeki & Pendidikan",
+    "title": "Doa Nabi Musa Memohon Kebaikan",
+    "arabic": "رَبِّ إِنِّي لِمَا أَنْزَلْتَ إِلَيَّ مِنْ خَيْرٍ فَقِيرٌ",
+    "latin": "Rabbi inni lima anzalta ilayya min khairin faqir.",
+    "translation": "Ya Tuhanku, sesungguhnya aku sangat memerlukan suatu kebaikan yang Engkau turunkan kepadaku."
+  },
+  {
+    "id": "la-haula-wala-quwwata",
+    "category": "Dzikir",
+    "title": "La Haula Wala Quwwata Illa Billah",
+    "arabic": "لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ",
+    "latin": "Laa haula wa laa quwwata illaa billah.",
+    "translation": "Tidak ada daya dan kekuatan kecuali dengan pertolongan Allah."
+  },
+  {
+    "id": "doa-memohon-keikhlasan",
+    "category": "Keikhlasan",
+    "title": "Doa Memohon Keikhlasan",
+    "arabic": "اللَّهُمَّ اجْعَلْ عَمَلِي كُلَّهُ صَالِحًا وَاجْعَلْهُ لِوَجْهِكَ خَالِصًا، وَلَا تَجْعَلْ لِأَحَدٍ فِيهِ شَيْئًا",
+    "latin": "Allahummaj'al 'amali kullahu shalihan, waj'alhu li-wajhika khalishan, wa la taj'al li-ahadin fihi syai'an.",
+    "translation": "Ya Allah, jadikanlah seluruh amalku sebagai kebaikan dan jadikanlah amal tersebut ikhlas hanya karena-Mu."
+  },
+  {
+    "id": "doa-hati-ridha",
+    "category": "Keteguhan Hati",
+    "title": "Doa Memohon Hati yang Ridha",
+    "arabic": "اللَّهُمَّ اجْعَلْنِي رَاضِيًا بِقَضَائِكَ، مُتَوَكِّلًا عَلَيْكَ",
+    "latin": "Allahummaj'alni radhiyan bi-qadha'ika, mutawakkilan 'alaik.",
+    "translation": "Ya Allah, jadikanlah aku orang yang ridha terhadap ketentuan-Mu dan senantiasa bertawakal kepada-Mu."
+  },
+  {
+    "id": "doa-kesabaran",
+    "category": "Kesabaran",
+    "title": "Doa Memohon Kesabaran",
+    "arabic": "رَبَّنَا أَفْرِغْ عَلَيْنَا صَبْرًا وَثَبِّتْ أَقْدَامَنَا",
+    "latin": "Rabbanaa afrigh 'alainaa shabran wa tsabbit aqdaamanaa.",
+    "translation": "Ya Tuhan kami, limpahkanlah kesabaran kepada kami dan kukuhkanlah pendirian kami."
+  },
+  {
+    "id": "ma-fi-qolbi-ghairullah",
+    "category": "Dzikir",
+    "title": "Ma Fi Qolbi Gairullah",
+    "arabic": "",
+    "latin": "Ma fii qolbi ghairullah.",
+    "translation": "Tiada di dalam hatiku selain Allah."
+  },
+  {
+    "id": "doa-kesabaran-keikhlasan",
+    "category": "Kesabaran",
+    "title": "Doa Memohon Kesabaran dan Keikhlasan",
+    "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ صَبْرًا جَمِيلًا وَقَلْبًا شَاكِرًا وَلِسَانًا ذَاكِرًا",
+    "latin": "Allahumma inni as'aluka shabran jamiilan wa qalban syaakiran wa lisaanan dzaakiran.",
+    "translation": "Ya Allah, aku memohon kepada-Mu kesabaran yang indah, hati yang bersyukur, dan lisan yang senantiasa berdzikir."
+  },
+  {
+    "id": "doa-mohon-kesabaran",
+    "category": "Kesabaran",
+    "title": "Doa Mohon Kesabaran",
+    "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ تَعْجِيلَ عَافِيَتِكَ وَصَبْرًا عَلَى بَلِيَّتِكَ",
+    "latin": "Allahumma inni as-aluka ta'jiila 'aafiyatika wa shobron 'alaa baliyyatika.",
+    "translation": "Ya Allah, aku memohon kepada-Mu agar segera mendapatkan kesehatan dan kesabaran atas ujian-Mu."
+  },
+  {
+    "id": "doa-kesehatan-mental",
+    "category": "Ketenangan Hati",
+    "title": "Doa untuk Kesehatan Mental",
+    "arabic": "يَا حَيُّ يَا قَيُّومُ بِرَحْمَتِكَ أَسْتَغِيثُ أَصْلِحْ لِي شَأْنِي كُلَّهُ",
+    "latin": "Yaa Hayyu Yaa Qayyuum, bi rahmatika astaghiits, ashlih lii sya'nii kullahu.",
+    "translation": "Wahai Zat Yang Maha Hidup dan Maha Berdiri Sendiri, dengan rahmat-Mu aku memohon pertolongan. Perbaikilah seluruh urusanku."
+  },
+  {
+    "id": "doa-menyerahkan-keadilan",
+    "category": "Perlindungan",
+    "title": "Doa Menyerahkan Keadilan kepada Allah",
+    "arabic": "",
+    "latin": "Hasbiyallahu lidiini, hasbiyallahu lidunyaaya, hasbiyallahu liman ahammani.",
+    "translation": "Cukuplah Allah bagiku dalam agamaku, duniaku, dan terhadap orang yang bermaksud buruk kepadaku."
+  },
+  {
+    "id": "doa-ganti-lebih-baik",
+    "category": "Ketabahan",
+    "title": "Doa Minta Ganti yang Lebih Baik",
+    "arabic": "",
+    "latin": "Allahumma ajirni fi mushibati wa akhlif li khairan minha.",
+    "translation": "Ya Allah, berilah aku pahala dalam musibahku dan berilah aku ganti yang lebih baik daripadanya."
+  },
+  {
+    "id": "doa-menghadapi-kesulitan",
+    "category": "Kesulitan",
+    "title": "Doa Menghadapi Kesulitan",
+    "arabic": "لَا إِلَهَ إِلَّا اللَّهُ الْعَظِيمُ الْحَلِيمُ، لَا إِلَهَ إِلَّا اللَّهُ رَبُّ الْعَرْشِ الْعَظِيمِ",
+    "latin": "Laa ilaaha illallaahul 'azhiimul haliim, laa ilaaha illallaahu robbul 'arsyil 'azhiim.",
+    "translation": "Tiada Tuhan selain Allah Yang Maha Agung lagi Maha Penyantun. Tiada Tuhan selain Allah, Tuhan Arsy yang agung."
+  },
+  {
+    "id": "doa-agar-tidak-mudah-lupa",
+    "category": "Pendidikan & Ilmu",
+    "title": "Doa Agar Tidak Mudah Lupa",
+    "arabic": "اللَّهُمَّ إِنِّي أَسْتَوْدِعُكَ مَا عَلَّمْتَنِيهِ، فَارْدُدْهُ إِلَيَّ عِنْدَ حَاجَتِي إِلَيْهِ",
+    "latin": "Allahumma inni astaudi'uka maa 'allamtaniihi, fardudhu ilayya 'inda haajatii ilayhi.",
+    "translation": "Ya Allah, sesungguhnya aku menitipkan kepada-Mu apa yang telah Engkau ajarkan kepadaku, maka kembalikanlah ia kepadaku saat aku membutuhkannya."
+  },
+  {
+    "id": "doa-kecerdasan-dan-kebijaksanaan",
+    "category": "Pendidikan & Ilmu",
+    "title": "Doa Memohon Kecerdasan dan Kebijaksanaan",
+    "arabic": "اللَّهُمَّ ارْزُقْنِي فَهْمَ النَّبِيِّينَ، وَحِفْظَ الْمُرْسَلِينَ، وَإِلْهَامَ الْمَلَائِكَةِ الْمُقَرَّبِينَ",
+    "latin": "Allahummarzuqnii fahman-nabiyyiina wa hifdhal-mursaliina wa ilhaamal-malaa'ikatil-muqorrobiin.",
+    "translation": "Ya Allah, karuniailah aku pemahaman para nabi, hafalan para rasul, serta ilham para malaikat yang dekat dengan-Mu."
+  },
+  {
+    "id": "doa-memohon-cahaya",
+    "category": "Pendidikan & Ilmu",
+    "title": "Doa Memohon Cahaya",
+    "arabic": "اللَّهُمَّ زِدْنِي نُورًا، وَأَعْطِنِي نُورًا، وَاجْعَلْ لِي نُورًا",
+    "latin": "Allahumma zidnii nuuran, wa a'thinii nuuran, waj'al lii nuuran.",
+    "translation": "Ya Allah, tambahkanlah cahaya untukku, berikanlah cahaya untukku, dan jadikanlah cahaya untukku."
+  },
+  {
+    "id": "doa-kemudahan-memahami",
+    "category": "Pendidikan & Ilmu",
+    "title": "Doa Memohon Kemudahan",
+    "arabic": "اللَّهُمَّ لَا سَهْلَ إِلَّا مَا جَعَلْتَهُ سَهْلًا، وَأَنْتَ تَجْعَلُ الْحَزْنَ إِذَا شِئْتَ سَهْلًا",
+    "latin": "Allahumma laa sahla illaa maa ja'altahu sahlan, wa anta taj'alul hazna idzaa syi'ta sahlan.",
+    "translation": "Ya Allah, tidak ada yang mudah kecuali apa yang Engkau mudahkan."
+  },
+  {
+    "id": "doa-surat-al-muminun-97-98",
+    "category": "Perlindungan",
+    "title": "Doa Surat Al-Mu'minun Ayat 97–98",
+    "arabic": "وَقُلْ رَبِّ أَعُوذُ بِكَ مِنْ هَمَزَاتِ الشَّيَاطِينِ وَأَعُوذُ بِكَ رَبِّ أَنْ يَحْضُرُونِ",
+    "latin": "Wa qul rabbi a'uudzu bika min hamazaatisy-syayaathiin. Wa a'uudzu bika rabbi an yahdhuruun.",
+    "translation": "Ya Tuhanku, aku berlindung kepada Engkau dari bisikan-bisikan setan dan aku berlindung kepada-Mu agar mereka tidak mendekati aku."
+  },
+  {
+    "id": "doa-membuka-baju",
+    "category": "Doa Harian",
+    "title": "Doa Membuka Baju",
+    "arabic": "بِسْمِ اللَّهِ الَّذِي لَا إِلَهَ إِلَّا هُوَ",
+    "latin": "Bismillaahil-ladzii laa ilaaha illaa huwa.",
+    "translation": "Dengan nama Allah yang tiada Tuhan selain Dia."
+  },
+  {
+    "id": "dzikir-saat-masuk-rumah",
+    "category": "Doa Harian",
+    "title": "Dzikir Saat Masuk Rumah",
+    "arabic": "بِسْمِ اللَّهِ وَلَجْنَا، وَبِسْمِ اللَّهِ خَرَجْنَا، وَعَلَى اللَّهِ رَبِّنَا تَوَكَّلْنَا",
+    "latin": "Bismillaahi walajnaa, wa bismillaahi kharajnaa, wa 'alallaahi rabbanaa tawakkalnaa.",
+    "translation": "Dengan nama Allah kami masuk, dengan nama Allah kami keluar, dan kepada Allah Tuhan kami, kami bertawakal."
+  },
+  {
+    "id": "doa-nabi-zakaria",
+    "category": "Keluarga & Keturunan",
+    "title": "Doa Nabi Zakaria",
+    "arabic": "رَبِّ هَبْ لِي مِنْ لَدُنْكَ ذُرِّيَّةً طَيِّبَةً إِنَّكَ سَمِيعُ الدُّعَاءِ",
+    "latin": "Rabbi hab lii min ladunka dzurriyyatan thayyibatan, innaka samii'ud du'aa'.",
+    "translation": "Ya Tuhanku, berilah aku dari sisi-Mu seorang anak yang baik. Sesungguhnya Engkau Maha Pendengar doa."
+  },
+  {
+    "id": "doa-perlindungan-umum",
+    "category": "Perlindungan",
+    "title": "Doa Perlindungan Umum",
+    "arabic": "أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّةِ مِنْ شَرِّ مَا خَلَقَ",
+    "latin": "A'uudzu bikalimaatillaahit-taammaati min syarri maa khalaq.",
+    "translation": "Aku berlindung dengan kalimat-kalimat Allah yang sempurna dari kejahatan makhluk-Nya."
+  },
+  {
+    "id": "doa-keturunan-penyejuk-hati",
+    "category": "Keluarga & Keturunan",
+    "title": "Doa Memohon Keturunan Penyejuk Hati",
+    "arabic": "رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا",
+    "latin": "Rabbanaa hab lanaa min azwaajinaa wa dzurriyyaatinaa qurrata a'yun, waj'alnaa lil-muttaqiina imaamaa.",
+    "translation": "Ya Tuhan kami, anugerahkanlah kepada kami penyejuk hati dari pasangan dan keturunan kami, serta jadikanlah kami pemimpin bagi orang-orang yang bertakwa."
+  }
+]
