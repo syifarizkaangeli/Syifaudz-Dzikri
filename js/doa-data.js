@@ -285,6 +285,83 @@ const DOA_DATA = [
     arabic: "رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا",
     latin: "Rabbanaa hab lanaa min azwaajinaa wa dzurriyyaatinaa qurrata a'yun, waj'alnaa lil-muttaqiina imaamaa.",
     translation: "Ya Tuhan kami, anugerahkanlah kepada kami penyejuk hati dari pasangan dan keturunan kami, serta jadikanlah kami pemimpin bagi orang-orang yang bertakwa."
+  },
+
+
+  // =========================================================
+  // 31-38 : 8 DOA TAMBAHAN HARI INI
+  // =========================================================
+
+  {
+    id: "doa-pembuka-rezeki-berkah-pagi",
+    category: "Rezeki & Keberkahan",
+    title: "Doa Pembuka Rezeki dan Berkah Pagi Hari",
+    arabic: "اللَّهُمَّ إِنِّي أَسْأَلُكَ عِلْمًا نَافِعًا، وَرِزْقًا طَيِّبًا، وَعَمَلًا مُتَقَبَّلًا",
+    latin: "Allahumma inni as-aluka 'ilman naafi'an, wa rizqan thoyyiban, wa 'amalan mutaqabbalan.",
+    translation: "Ya Allah, sungguh aku memohon kepada-Mu ilmu yang bermanfaat, rezeki yang halal, dan amal yang diterima."
+  },
+
+  {
+    id: "sayyidul-istighfar",
+    category: "Taubat & Ampunan",
+    title: "Sayyidul Istighfar",
+    arabic: "اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَهَ إِلَّا أَنْتَ خَلَقْتَنِي وَأَنَا عَبْدُكَ وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ وَأَبُوءُ لَكَ بِذَنْبِي فَاغْفِرْ لِي فَإِنَّهُ لَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ",
+    latin: "Allahumma anta rabbii laa ilaaha illaa anta khalaqtanii wa ana 'abduka wa ana 'alaa 'ahdika wa wa'dika mastatha'tu, a'udzu bika min syarri maa shana'tu, abuu-u laka bini'matika 'alayya wa abuu-u laka bidzanbii faghfir lii fa innahu laa yaghfirudz-dzunuuba illaa anta.",
+    translation: "Ya Allah, Engkau adalah Tuhanku, tidak ada Tuhan selain Engkau. Engkau yang menciptakan aku dan aku adalah hamba-Mu. Aku menetapkan diri pada janji-Mu semampuku. Aku berlindung kepada-Mu dari keburukan yang kuperbuat. Aku mengakui nikmat-Mu atasku dan aku mengakui dosaku, maka ampunilah aku. Sesungguhnya tidak ada yang mengampuni dosa selain Engkau."
+  },
+
+  {
+    id: "doa-hajat",
+    category: "Hajat",
+    title: "Doa Memohon Hajat",
+    arabic: "لَا إِلَهَ إِلَّا اللَّهُ الْحَلِيمُ الْكَرِيمُ، سُبْحَانَ اللَّهِ رَبِّ الْعَرْشِ الْعَظِيمِ، الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ",
+    latin: "Laa ilaaha illallaahul haliimul kariim. Subhaanallaahi rabbil 'arsyil 'azhiim. Alhamdulillaahi rabbil 'aalamiin.",
+    translation: "Tidak ada Tuhan selain Allah Yang Maha Penyantun lagi Maha Mulia. Maha Suci Allah, Tuhan Arsy yang agung. Segala puji bagi Allah, Tuhan seluruh alam."
+  },
+
+  {
+    id: "doa-istikharah",
+    category: "Petunjuk & Pilihan",
+    title: "Doa Istikharah",
+    arabic: "اللَّهُمَّ إِنِّي أَسْتَخِيرُكَ بِعِلْمِكَ، وَأَسْتَقْدِرُكَ بِقُدْرَتِكَ، وَأَسْأَلُكَ مِنْ فَضْلِكَ الْعَظِيمِ، فَإِنَّكَ تَقْدِرُ وَلَا أَقْدِرُ، وَتَعْلَمُ وَلَا أَعْلَمُ، وَأَنْتَ عَلَّامُ الْغُيُوبِ",
+    latin: "Allahumma inni astakhiiruka bi'ilmika, wa astaqdiruka biqudratika, wa as-aluka min fadhlikal 'azhiim, fa innaka taqdiru wa laa aqdiru, wa ta'lamu wa laa a'lamu, wa anta 'allaamul ghuyuub.",
+    translation: "Ya Allah, sesungguhnya aku memohon pilihan yang baik dengan ilmu-Mu, dan aku memohon kemampuan dengan kekuasaan-Mu, serta memohon kepada-Mu sebagian dari karunia-Mu yang agung. Sesungguhnya Engkau Mahakuasa sedangkan aku tidak berkuasa, Engkau mengetahui sedangkan aku tidak mengetahui, dan Engkau Maha Mengetahui perkara-perkara gaib."
+  },
+
+  {
+    id: "al-baqarah-285",
+    category: "Al-Quran & Perlindungan",
+    title: "Surat Al-Baqarah Ayat 285",
+    arabic: "آمَنَ الرَّسُولُ بِمَا أُنْزِلَ إِلَيْهِ مِنْ رَبِّهِ وَالْمُؤْمِنُونَ ۚ كُلٌّ آمَنَ بِاللَّهِ وَمَلَائِكَتِهِ وَكُتُبِهِ وَرُسُلِهِ لَا نُفَرِّقُ بَيْنَ أَحَدٍ مِنْ رُسُلِهِ ۚ وَقَالُوا سَمِعْنَا وَأَطَعْنَا ۖ غُفْرَانَكَ رَبَّنَا وَإِلَيْكَ الْمَصِيرُ",
+    latin: "Aamanar-rasuulu bimaa unzila ilaihi mir rabbihi wal-mu'minuun, kullun aamana billaahi wa malaa-ikatihi wa kutubihi wa rusulih, laa nufarriqu baina ahadim mir rusulih, wa qaaluu sami'naa wa atha'naa ghufraanaka rabbanaa wa ilaikal-mashiir.",
+    translation: "Rasul telah beriman kepada apa yang diturunkan kepadanya dari Tuhannya, demikian pula orang-orang yang beriman. Semuanya beriman kepada Allah, malaikat-malaikat-Nya, kitab-kitab-Nya dan rasul-rasul-Nya. Mereka berkata, 'Kami tidak membeda-bedakan seorang pun dari rasul-rasul-Nya.' Dan mereka berkata, 'Kami dengar dan kami taat. Ampunilah kami wahai Tuhan kami, dan kepada-Mulah tempat kembali.'"
+  },
+
+  {
+    id: "al-baqarah-286",
+    category: "Al-Quran & Perlindungan",
+    title: "Surat Al-Baqarah Ayat 286",
+    arabic: "لَا يُكَلِّفُ اللَّهُ نَفْسًا إِلَّا وُسْعَهَا ۚ لَهَا مَا كَسَبَتْ وَعَلَيْهَا مَا اكْتَسَبَتْ ۗ رَبَّنَا لَا تُؤَاخِذْنَا إِنْ نَسِينَا أَوْ أَخْطَأْنَا ۚ رَبَّنَا وَلَا تَحْمِلْ عَلَيْنَا إِصْرًا كَمَا حَمَلْتَهُ عَلَى الَّذِينَ مِنْ قَبْلِنَا ۚ رَبَّنَا وَلَا تُحَمِّلْنَا مَا لَا طَاقَةَ لَنَا بِهِ ۖ وَاعْفُ عَنَّا وَاغْفِرْ لَنَا وَارْحَمْنَا ۚ أَنْتَ مَوْلَانَا فَانْصُرْنَا عَلَى الْقَوْمِ الْكَافِرِينَ",
+    latin: "Laa yukallifullaahu nafsan illaa wus'ahaa, lahaa maa kasabat wa 'alaihaa maktasabat. Rabbanaa laa tu-aakhidznaa in nasiinaa au akhtha'naa. Rabbanaa wa laa tahmil 'alainaa ishran kamaa hamaltahu 'alalladziina min qablinaa. Rabbanaa wa laa tuhammilnaa maa laa thaaqata lanaa bih, wa'fu 'annaa, waghfir lanaa, warhamnaa, anta maulaanaa fanshurnaa 'alal-qaumil-kaafiriin.",
+    translation: "Allah tidak membebani seseorang melainkan sesuai dengan kesanggupannya. Ia mendapat pahala dari kebajikan yang dikerjakannya dan mendapat siksa dari kejahatan yang diperbuatnya. Ya Tuhan kami, janganlah Engkau hukum kami jika kami lupa atau melakukan kesalahan. Ya Tuhan kami, janganlah Engkau bebani kami dengan beban berat sebagaimana Engkau bebankan kepada orang-orang sebelum kami. Ya Tuhan kami, janganlah Engkau pikulkan kepada kami apa yang tidak sanggup kami pikul. Maafkanlah kami, ampunilah kami, dan rahmatilah kami. Engkaulah pelindung kami, maka tolonglah kami menghadapi orang-orang kafir."
+  },
+
+  {
+    id: "doa-nabi-yusuf-pengasihan",
+    category: "Doa Kecantikan",
+    title: "Doa Nabi Yusuf untuk Pengasihan dan Kharisma",
+    arabic: "إِذْ قَالَ يُوسُفُ لِأَبِيهِ يَا أَبَتِ إِنِّي رَأَيْتُ أَحَدَ عَشَرَ كَوْكَبًا وَالشَّمْسَ وَالْقَمَرَ رَأَيْتُهُمْ لِي سَاجِدِينَ",
+    latin: "Idz qaala yuusufu li abiihi yaa abati innii ra-aitu ahada 'asyara kaukaban wasy-syamsa wal-qamara ra-aituhum lii saajidiin.",
+    translation: "Ketika Yusuf berkata kepada ayahnya, 'Wahai ayahku, sesungguhnya aku bermimpi melihat sebelas bintang, matahari dan bulan; kulihat semuanya sujud kepadaku.'"
+  },
+
+  {
+    id: "surat-at-tahrim-6-8",
+    category: "Perlindungan & Taubat",
+    title: "Surat At-Tahrim Ayat 6-8",
+    arabic: "يَا أَيُّهَا الَّذِينَ آمَنُوا قُوا أَنْفُسَكُمْ وَأَهْلِيكُمْ نَارًا وَقُودُهَا النَّاسُ وَالْحِجَارَةُ عَلَيْهَا مَلَائِكَةٌ غِلَاظٌ شِدَادٌ لَا يَعْصُونَ اللَّهَ مَا أَمَرَهُمْ وَيَفْعَلُونَ مَا يُؤْمَرُونَ ۝ يَا أَيُّهَا الَّذِينَ كَفَرُوا لَا تَعْتَذِرُوا الْيَوْمَ إِنَّمَا تُجْزَوْنَ مَا كُنْتُمْ تَعْمَلُونَ ۝ يَا أَيُّهَا الَّذِينَ آمَنُوا تُوبُوا إِلَى اللَّهِ تَوْبَةً نَصُوحًا عَسَى رَبُّكُمْ أَنْ يُكَفِّرَ عَنْكُمْ سَيِّئَاتِكُمْ وَيُدْخِلَكُمْ جَنَّاتٍ تَجْرِي مِنْ تَحْتِهَا الْأَنْهَارُ",
+    latin: "Yaa ayyuhalladziina aamanuu quu anfusakum wa ahliikum naaran waquuduhan-naasu wal-hijaarah, 'alaihaa malaa-ikatun ghilaazhun syidaad, laa ya'shuunallaaha maa amarahum wa yaf'aluuna maa yu'maruun. Yaa ayyuhalladziina kafaruu laa ta'tadzirul-yauma innamaa tujzauna maa kuntum ta'maluun. Yaa ayyuhalladziina aamanuu tuubuu ilallaahi taubatan nashuuhaa, 'asaa rabbukum an yukaffira 'ankum sayyi-aatikum wa yudkhilakum jannaatin tajrii min tahtihal-anhaar.",
+    translation: "Wahai orang-orang yang beriman, jagalah dirimu dan keluargamu dari api neraka yang bahan bakarnya manusia dan batu. Penjaganya adalah malaikat-malaikat yang kasar dan keras. Mereka tidak mendurhakai Allah terhadap apa yang diperintahkan-Nya dan selalu mengerjakan apa yang diperintahkan. Wahai orang-orang kafir, janganlah kamu mengemukakan alasan pada hari ini. Sesungguhnya kamu hanya diberi balasan menurut apa yang kamu kerjakan. Wahai orang-orang yang beriman, bertobatlah kepada Allah dengan tobat yang semurni-murninya. Mudah-mudahan Tuhanmu akan menghapus kesalahan-kesalahanmu dan memasukkanmu ke dalam surga yang mengalir di bawahnya sungai-sungai."
   }
 
 ];
