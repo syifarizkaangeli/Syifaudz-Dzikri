@@ -289,7 +289,7 @@ const DOA_DATA = [
 
 
   // =========================================================
-  // 31-38 : 8 DOA TAMBAHAN HARI INI
+  // 31-38 : TAMBAHAN SEBELUMNYA
   // =========================================================
 
   {
@@ -347,12 +347,12 @@ const DOA_DATA = [
   },
 
   {
-    id: "doa-nabi-yusuf-pengasihan",
-    category: "Doa Kecantikan",
-    title: "Doa Nabi Yusuf untuk Pengasihan dan Kharisma",
-    arabic: "إِذْ قَالَ يُوسُفُ لِأَبِيهِ يَا أَبَتِ إِنِّي رَأَيْتُ أَحَدَ عَشَرَ كَوْكَبًا وَالشَّمْسَ وَالْقَمَرَ رَأَيْتُهُمْ لِي سَاجِدِينَ",
-    latin: "Idz qaala yuusufu li abiihi yaa abati innii ra-aitu ahada 'asyara kaukaban wasy-syamsa wal-qamara ra-aituhum lii saajidiin.",
-    translation: "Ketika Yusuf berkata kepada ayahnya, 'Wahai ayahku, sesungguhnya aku bermimpi melihat sebelas bintang, matahari dan bulan; kulihat semuanya sujud kepadaku.'"
+    id: "doa-cahaya-pertama",
+    category: "Hidayah & Cahaya",
+    title: "Doa Memohon Cahaya",
+    arabic: "اللَّهُمَّ زِدْنِي نُورًا، وَأَعْطِنِي نُورًا، وَاجْعَلْ لِي نُورًا، وَاجْعَلْنِي نُورًا",
+    latin: "Allahumma zidnii nuuran, wa a'thinii nuuran, waj'al lii nuuran, waj'alnii nuuran.",
+    translation: "Ya Allah, tambahkanlah cahaya untukku, berikanlah cahaya untukku, jadikanlah cahaya untukku, dan jadikanlah diriku sebagai cahaya."
   },
 
   {
@@ -362,6 +362,38 @@ const DOA_DATA = [
     arabic: "يَا أَيُّهَا الَّذِينَ آمَنُوا قُوا أَنْفُسَكُمْ وَأَهْلِيكُمْ نَارًا وَقُودُهَا النَّاسُ وَالْحِجَارَةُ عَلَيْهَا مَلَائِكَةٌ غِلَاظٌ شِدَادٌ لَا يَعْصُونَ اللَّهَ مَا أَمَرَهُمْ وَيَفْعَلُونَ مَا يُؤْمَرُونَ ۝ يَا أَيُّهَا الَّذِينَ كَفَرُوا لَا تَعْتَذِرُوا الْيَوْمَ إِنَّمَا تُجْزَوْنَ مَا كُنْتُمْ تَعْمَلُونَ ۝ يَا أَيُّهَا الَّذِينَ آمَنُوا تُوبُوا إِلَى اللَّهِ تَوْبَةً نَصُوحًا عَسَى رَبُّكُمْ أَنْ يُكَفِّرَ عَنْكُمْ سَيِّئَاتِكُمْ وَيُدْخِلَكُمْ جَنَّاتٍ تَجْرِي مِنْ تَحْتِهَا الْأَنْهَارُ",
     latin: "Yaa ayyuhalladziina aamanuu quu anfusakum wa ahliikum naaran waquuduhan-naasu wal-hijaarah, 'alaihaa malaa-ikatun ghilaazhun syidaad, laa ya'shuunallaaha maa amarahum wa yaf'aluuna maa yu'maruun. Yaa ayyuhalladziina kafaruu laa ta'tadzirul-yauma innamaa tujzauna maa kuntum ta'maluun. Yaa ayyuhalladziina aamanuu tuubuu ilallaahi taubatan nashuuhaa, 'asaa rabbukum an yukaffira 'ankum sayyi-aatikum wa yudkhilakum jannaatin tajrii min tahtihal-anhaar.",
     translation: "Wahai orang-orang yang beriman, jagalah dirimu dan keluargamu dari api neraka yang bahan bakarnya manusia dan batu. Penjaganya adalah malaikat-malaikat yang kasar dan keras. Mereka tidak mendurhakai Allah terhadap apa yang diperintahkan-Nya dan selalu mengerjakan apa yang diperintahkan. Wahai orang-orang kafir, janganlah kamu mengemukakan alasan pada hari ini. Sesungguhnya kamu hanya diberi balasan menurut apa yang kamu kerjakan. Wahai orang-orang yang beriman, bertobatlah kepada Allah dengan tobat yang semurni-murninya. Mudah-mudahan Tuhanmu akan menghapus kesalahan-kesalahanmu dan memasukkanmu ke dalam surga yang mengalir di bawahnya sungai-sungai."
+  },
+
+
+  // =========================================================
+  // 39-41 : 3 DOA BARU DARI GAMBAR
+  // =========================================================
+
+  {
+    id: "doa-memohon-teman-yang-baik",
+    category: "Pertemanan & Lingkungan",
+    title: "Doa Memohon Teman yang Baik (Surah Al-Hasyr Ayat 10)",
+    arabic: "رَبَّنَا اغْفِرْ لَنَا وَلِإِخْوَانِنَا الَّذِينَ سَبَقُونَا بِالْإِيمَانِ وَلَا تَجْعَلْ فِي قُلُوبِنَا غِلًّا لِلَّذِينَ آمَنُوا رَبَّنَا إِنَّكَ رَءُوفٌ رَحِيمٌ",
+    latin: "Rabbanaghfir lanaa wa li-ikhwaaninalladziina sabaquunaa bil-iimaan, wa laa taj'al fii quluubinaa ghillal lilladziina aamanuu rabbanaa innaka rauufur rahiim.",
+    translation: "Ya Tuhan kami, ampunilah dosa-dosa kami dan dosa saudara-saudara kami yang telah mendahului kami dengan iman, dan janganlah Engkau membiarkan ada kedengkian dalam hati kami terhadap orang-orang yang beriman. Ya Tuhan kami, sungguh, Engkau Maha Penyantun, Maha Penyayang."
+  },
+
+  {
+    id: "doa-memohon-keturunan-dan-lingkungan-saleh",
+    category: "Keluarga & Lingkungan",
+    title: "Doa Memohon Keturunan dan Lingkungan yang Saleh (QS. Asy-Syu'ara: 83-85)",
+    arabic: "رَبِّ هَبْ لِي حُكْمًا وَأَلْحِقْنِي بِالصَّالِحِينَ ۝ وَاجْعَلْ لِي لِسَانَ صِدْقٍ فِي الْآخِرِينَ ۝ وَاجْعَلْنِي مِنْ وَرَثَةِ جَنَّةِ النَّعِيمِ",
+    latin: "Rabbi hablii hukman wa alhiqnii bish-shaalihiin. Waj'al lii lisaanan shidqin fil-aakhiriin. Waj'alnii min waratsati jannatin-na'iim.",
+    translation: "Ya Tuhanku, berikanlah kepadaku hikmah dan masukkanlah aku ke dalam golongan orang-orang yang saleh, dan jadikanlah aku buah tutur yang baik bagi orang-orang (yang datang) kemudian, dan jadikanlah aku termasuk orang-orang yang mewarisi surga yang penuh kenikmatan."
+  },
+
+  {
+    id: "doa-kemudahan-beribadah",
+    category: "Ibadah & Ketaatan",
+    title: "Doa Memohon Kemudahan Beribadah",
+    arabic: "اللَّهُمَّ وَفِّقْنَا لِطَاعَتِكَ، وَأَتْمِمْ تَقْصِيرَنَا، وَتَقَبَّلْ مِنَّا، إِنَّكَ أَنْتَ السَّمِيعُ الْعَلِيمُ",
+    latin: "Allahumma waffiqna li tha'atika, wa atmim taqshiirana, wa taqabbal minna, innaka antas samii'ul 'aliim.",
+    translation: "Ya Allah, bimbinglah jalan kami pada jalan ketaatan kepada-Mu, sempurnakanlah kekurangan kami, terimalah ibadah kami. Sungguh, Engkau Maha Mendengar lagi Maha Mengetahui."
   }
 
 ];
