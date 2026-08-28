@@ -1,13 +1,6 @@
-// Kumpulan doa harian. Setiap doa punya "id" unik supaya bisa dibuka
-// langsung lewat halaman detail (mis. saat dibagikan / dijadikan favorit).
 
 const DOA_DATA = [
-
-  // =========================================================
-  // 1-10 : DOA AWAL
-  // =========================================================
-
-  {
+ {
     id: "doa-melunasi-hutang",
     category: "Rezeki & Hutang",
     title: "Doa Melunasi Hutang",
